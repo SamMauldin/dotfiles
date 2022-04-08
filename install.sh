@@ -2,7 +2,7 @@
 
 set -eou pipefail
 
-sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply git@git.sr.ht:~sam_mauldin/dotfiles
+sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply https://git.sr.ht/~sam_mauldin/dotfiles
 
 mkdir -p ~/bin
 
@@ -14,3 +14,5 @@ cd ~/bin
 mv squashfs-root nvim-extracted
 rm nvim
 ln -s $HOME/bin/nvim-extracted/usr/bin/nvim $HOME/bin/nvim
+
+sudo apt-get install -y ripgrep fzf
